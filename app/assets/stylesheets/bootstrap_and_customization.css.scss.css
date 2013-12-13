@@ -1,0 +1,6 @@
+$body-bg:   green	;
+$jumbotron-bg: white;
+
+$navbar-default-link-color:   #2ecc71;
+
+@import 'bootstrap';
