@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 
-group :development, "test do 
+group :development, :test do 
 	gem 'sqlite3'
 end
 
