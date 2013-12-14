@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '1.9.3'
 
 gem 'rails', '3.2.12'
 
@@ -12,7 +12,7 @@ end
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
-
+gem 'devise', '~> 3.2.2'
 
 group :development, :test do 
 	gem 'sqlite3'
