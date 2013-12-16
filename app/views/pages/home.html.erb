@@ -7,11 +7,18 @@
  pieces of content.
  Use it as a starting point to create something more unique.</p>
 
-<div class="center">
-<%= link_to "Login",  new_user_session_path, class: "btn btn-primary btn-large" %>
-<%= link_to "Sign up",  new_user_registration_path, class: "btn btn-primary btn-large btn-danger" %>
+<%if user_signed_in? %>
+	# do something
+	<% else %>
 
-</div>
+	<div class="center">
+	<%= link_to "Login",  new_user_session_path, class: "btn btn-primary btn-large" %>
+	<%= link_to "Sign up",  new_user_registration_path, class: "btn btn-primary btn-large btn-danger" %>
+
+	</div>
+
+	<% end %>
+
 
 </div>
 
