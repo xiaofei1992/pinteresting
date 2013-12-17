@@ -1,6 +1,11 @@
 class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
+
+  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+
+
   def index
     @pins = Pin.all
 
@@ -23,7 +28,7 @@ class PinsController < ApplicationController
   # GET /pins/new
   # GET /pins/new.json
   def new
-    @pin = Pin.new
+    @pin = current_user.pins.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,7 +44,7 @@ class PinsController < ApplicationController
   # POST /pins
   # POST /pins.json
   def create
-    @pin = Pin.new(params[:pin])
+    @pin = current_user.pins.build(params[:pin])
       if @pin.save
         redirect_to @pin, notice: 'Pin was successfully created.' 
       else
