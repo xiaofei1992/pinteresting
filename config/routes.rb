@@ -4,9 +4,9 @@ Pinteresting::Application.routes.draw do
 
   devise_for :users
 
-
-   #root "pages#home"
-  	get 'home'  => 'pages#home'
+	#get 'pages/home'
+   root "pages/about"
+  	#root :to => "pages#contact"
     get 'about' => 'pages#about'
     get 'contact' => 'pages#contact'
 
